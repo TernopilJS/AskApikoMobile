@@ -1,3 +1,8 @@
 {
-  "appName": "AskApiko"
+  "appName": "AskApiko",
+
+  "errors": {
+    "somethingWrong": "Something went wrong",
+    "openLinkError": "Cannot open the link"
+  }
 }

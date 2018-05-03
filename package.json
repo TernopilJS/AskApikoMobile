@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "ex-react-native-i18n": "0.0.4",
     "expo": "^26.0.0",
     "moment": "^2.22.1",
     "prop-types": "^15.6.0",

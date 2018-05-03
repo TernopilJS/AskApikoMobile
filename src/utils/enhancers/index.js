@@ -1,9 +1,7 @@
 export { default as paramsToProps } from './paramsToProps';
 export { default as withClassVariable } from './withClassVariable';
-export { default as setParamsOnWillMount } from './setParamsOnWillMount';
 export { default as setParamsOnDidMount } from './setParamsOnDidMount';
 export { default as didMountWithSetTimeout } from './didMountWithSetTimeout';
-export { default as withSegmentedControls } from './withSegmentedControls';
 export { default as withSpinnerWhileLoading } from './withSpinnerWhileLoading';
 export { default as withClassVariableHandlers } from './withClassVariableHandlers';
 export { default as logSegmentScreenOnDidMount } from './logSegmentScreenOnDidMount';

@@ -1,7 +1,4 @@
-import { Dimensions } from 'react-native';
-import isIphoneX from '../utils/iphoneXHelper';
-
-const window = Dimensions.get('window')
+import { isIphoneX } from '../utils/iphoneXHelper';
 
 const PREFIXES = {
   iphoneX: 'iphoneX',
