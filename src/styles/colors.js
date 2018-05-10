@@ -23,6 +23,10 @@ const colors = {
     icon: '#000',
     border: '#C6C6C6',
   },
+
+  drawerButton: {
+    color: '#FF9801',
+  },
 };
 
 export default colors;

@@ -1,11 +1,25 @@
 import React from 'react';
 import T from 'prop-types';
-import { Text } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { Touchable } from '../';
+import s from './styles';
+import { colors } from '../../styles';
 
-const DrawerButton = props => (
-  <Text style={{ width: 100, height: 50 }} onPress={props.onPress}>
-    Drawer
-  </Text>
+const DrawerButton = ({
+  onPress,
+}) => (
+  <Touchable
+    style={s.icon}
+    onPress={onPress}
+    useOpacity
+    borderless
+  >
+    <Ionicons
+      color={colors.drawerButton.color}
+      size={28}
+      name="ios-menu"
+    />
+  </Touchable>
 );
 
 DrawerButton.propTypes = {
