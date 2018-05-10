@@ -5,7 +5,7 @@ const colors = {
   separator: '#c6c6c6',
 
   welcomeScreen: {
-    background: '#39709b',
+    background: '#FFFFFF',
     title: '#FFFFFF',
     bottomBackground: '#FFFFFF',
   },

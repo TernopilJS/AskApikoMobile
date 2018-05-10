@@ -5,7 +5,7 @@ import SearchNavigator from './SearchNavigator';
 import CreateQuestionNavigator from './CreateQuestionNavigator';
 import ProfileNavigator from './ProfileNavigator';
 import AboutUsNavigator from './AboutUsNavigator';
-import { Drawer } from './components';
+import { AuthorizedDrawer } from './components';
 
 export default createDrawerNavigator({
   [screens.Home]: {
@@ -29,7 +29,7 @@ export default createDrawerNavigator({
     drawerLabel: 'About Us',
   },
 }, {
-  drawerWidth: 300,
+  // drawerWidth: 300,
   drawerPosition: 'left',
-  contentComponent: Drawer,
+  contentComponent: AuthorizedDrawer,
 });
