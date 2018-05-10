@@ -4,7 +4,7 @@ import { colors } from '../../styles';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 58,
+    height: 52,
     backgroundColor: colors.drawerItem.background,
     alignItems: 'center',
     flexDirection: 'row',
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: '700',
     color: colors.drawerItem.text,
   },
