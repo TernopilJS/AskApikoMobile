@@ -13,7 +13,7 @@ import store from './store';
 import { globalStyles } from './styles';
 import { appOperations } from './modules/app';
 import { loadAssets, loadFonts } from './utils';
-import WelcomeScreen from './screens/WelcomeScreen';
+import RootNavigator from './navigation/RootNavigator';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -41,7 +41,7 @@ const App = ({
   return (
     <Provider store={store}>
       <View style={globalStyles.fillAll}>
-        <WelcomeScreen />
+        <RootNavigator />
       </View>
     </Provider>
   );
