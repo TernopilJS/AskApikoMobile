@@ -1,8 +1,19 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import {
+  createReactNavigationReduxMiddleware,
+  createReduxBoundAddListener,
+} from 'react-navigation-redux-helpers';
 import reducers from '../modules';
 
 let store = null; // eslint-disable-line
+
+const navigationMiddleware = createReactNavigationReduxMiddleware(
+  'root',
+  state => state.nav,
+);
+
+export const addNavigationListener = createReduxBoundAddListener('root');
 
 if (__DEV__) { // eslint-disable-line
   const devToolsEnhancer = require('remote-redux-devtools'); // eslint-disable-line
@@ -10,7 +21,7 @@ if (__DEV__) { // eslint-disable-line
     combineReducers(reducers),
     {},
     compose(
-      applyMiddleware(thunk),
+      applyMiddleware(navigationMiddleware, thunk),
       devToolsEnhancer.default({
         realtime: true,
         hostname: 'localhost',
@@ -23,7 +34,7 @@ if (__DEV__) { // eslint-disable-line
   store = createStore(
     combineReducers(reducers),
     {},
-    applyMiddleware(thunk),
+    applyMiddleware(navigationMiddleware, thunk),
   );
 }
 

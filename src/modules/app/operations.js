@@ -1,5 +1,5 @@
 import { AsyncStorage, NetInfo } from 'react-native';
-import * as actions from './actions';
+import { navigationOperations } from '../navigation';
 import Api, { SocketApi } from '../../api';
 
 export const initApi = token => () => {
@@ -18,11 +18,9 @@ export const initialization = () => async (dispatch) => {
 
     if (token) {
       dispatch(initApi(token));
+      dispatch(navigationOperations.navigateToAuthorized());
     }
   } catch (err) {
     console.log(err);
   }
 };
-
-export const increment = payload => actions.increment(payload);
-export const decrement = payload => actions.decrement(payload);
