@@ -13,7 +13,7 @@ import store from './store';
 import { globalStyles } from './styles';
 import { appOperations } from './modules/app';
 import { loadAssets, loadFonts } from './utils';
-import RootNavigator from './navigation/RootNavigator';
+import RootNavigatorContainer from './navigation';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -25,14 +25,14 @@ if (isAndroid) {
 
 const App = ({
   showLoading,
-  setLoadingStatus,
   asyncJob,
+  onFinish,
 }) => {
   if (showLoading) {
     return (
       <AppLoading
         startAsync={asyncJob}
-        onFinish={() => setLoadingStatus(false)}
+        onFinish={onFinish}
         onError={console.warn} // eslint-disable-line
       />
     );
@@ -41,7 +41,7 @@ const App = ({
   return (
     <Provider store={store}>
       <View style={globalStyles.fillAll}>
-        <RootNavigator />
+        <RootNavigatorContainer />
       </View>
     </Provider>
   );
@@ -49,8 +49,8 @@ const App = ({
 
 App.propTypes = {
   showLoading: T.bool,
-  setLoadingStatus: T.func,
   asyncJob: T.func,
+  onFinish: T.func,
 };
 
 
@@ -66,6 +66,9 @@ const enhance = compose(
     },
     navigateBack: props => () => { // eslint-disable-line
       return true;
+    },
+    onFinish: props => () => {
+      props.setLoadingStatus(false);
     },
   }),
   lifecycle({
