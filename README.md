@@ -16,3 +16,6 @@
 
 ### Preview
 ![AskApikoMobile design artboards](design/Artboards.png)
+
+## License
+All the code available under the MIT + Apache 2.0. licenses. See [LICENSE](LICENSE).
